@@ -1,0 +1,8 @@
+configuration {
+/*	modi: "window,run,ssh";*/
+	width: 100;
+	lines: 15;
+
+/*	columns: 1;*/
+	font: "Iosevka Term 22";
+
