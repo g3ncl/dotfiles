@@ -1,0 +1,123 @@
+:root
+{
+    --ease-in: cubic-bezier(.4, 0, 1, 1);
+	--ease-out: cubic-bezier(0, 0, .2, 1);
+	--ease-basic: linear;
+
+	--button-size: 32px; /* is this used? */
+	--icon-size: 24px; /* is this used? */
+}
+
+#titlebar,
+#tabbrowser-tabs
+{
+ 	--tab-min-height: 34px !important;
+}
+
+@supports -moz-bool-pref("materialFox.reduceTabOverflow")
+{
+	#tabbrowser-tabs
+	{
+		--tab-min-width: 36px !important;
+	}
+}
+
+:root
+{	
+	--tab-hover-fill-opacity: .1 !important;
+	--tab-focus-fill-opacity: .2 !important;
+	--tab-separator-opacity: .35 !important;
+	
+	--toolbar-field-background-color: hsl(200, 12%, 95%) !important;
+	--toolbar-field-hover-background-color: hsl(216, 12%, 92%) !important;
+	--toolbar-field-focus-background-color: hsl(0, 0%, 100%) !important;
+}
+
+:root:-moz-any(:-moz-lwtheme-brighttext, [privatebrowsingmode])
+{
+	--toolbar-field-background-color: hsl(206, 8%, 17%) !important;
+	--toolbar-field-hover-background-color: hsl(206, 7%, 20%) !important;
+	--toolbar-field-focus-background-color: hsl(206, 6%, 25%) !important;
+}
+
+:root:not(:-moz-lwtheme)
+{
+	--toolbar-bgcolor: hsl(0, 0%, 100%) !important;
+	--toolbar-color: hsl(213, 5%, 39%) !important;
+	--toolbox-border-bottom-color: hsl(0, 0%, 70%) !important;
+}
+
+@media (-moz-mac-yosemite-theme)
+{
+	:root
+	{
+		--tab-hover-fill-opacity: .6 !important;
+		--tab-focus-fill-opacity: .8 !important;
+	}
+	
+	:root[extradragspace]
+	{
+		--space-above-tabbar: 8px !important;
+	}
+}
+
+/* Ubuntu */
+@media (-moz-gtk-csd-available)
+{
+	:root:not(:-moz-lwtheme)
+	{
+		--toolbar-bgcolor: -moz-dialog !important;
+		--toolbar-color: -moz-dialogtext !important;
+	}
+}
+
+:root:-moz-lwtheme-darktext
+{
+	--tab-hover-fill-opacity: .6 !important;
+	--tab-focus-fill-opacity: .8 !important;
+}
+
+:root:-moz-lwtheme-darktext,
+:root toolbar:not([brighttext]),
+.tabbrowser-tab[visuallyselected]
+{
+	--toolbarbutton-hover-background: var(--lwt-toolbarbutton-hover-background, hsla(0, 0%, 0%, .07)) !important;
+    --toolbarbutton-active-background: var(--lwt-toolbarbutton-active-background, hsla(0, 0%, 0%, .11)) !important;
+}
+
+:root:-moz-lwtheme-brighttext,
+:root toolbar[brighttext],
+.tabbrowser-tab[visuallyselected]:-moz-lwtheme-brighttext
+{
+    --toolbarbutton-hover-background: var(--lwt-toolbarbutton-hover-background, hsla(0, 0%, 100%, .1)) !important;
+    --toolbarbutton-active-background: var(--lwt-toolbarbutton-active-background, hsla(0, 0%, 100%, .17)) !important;
+}
+
+:root[privatebrowsingmode]
+{
+	--toolbar-color: hsl(180, 4%, 95%) !important;
+	--toolbar-bgcolor: hsl(206, 7%, 21%) !important;
+	--chrome-secondary-background-color: hsl(206, 7%, 21%) !important;
+	--toolbox-border-bottom-color: hsl(0, 0%, 16%) !important;
+}
+
+:root[privatebrowsingmode] toolbar:not(#TabsToolbar):not(#toolbar-menubar),
+:root[privatebrowsingmode] .tabbrowser-tab[visuallyselected] .tab-close-button
+{
+	--chrome-color: hsl(180, 4%, 95%) !important;
+	--toolbarbutton-hover-background: hsla(0, 0%, 100%, .1) !important;
+    --toolbarbutton-active-background: hsla(0, 0%, 100%, .17) !important;
+}
+
+/* special case for urlbar buttons */
+:-moz-any(#urlbar, #searchbar)
+{
+	--toolbarbutton-hover-background: hsl(210, 5%, 85%) !important;
+	--toolbarbutton-active-background: hsl(210, 4%, 80%) !important;
+}
+
+:root:-moz-any([privatebrowsingmode], :-moz-lwtheme-brighttext) :-moz-any(#urlbar, #searchbar)
+{
+	--toolbarbutton-hover-background: hsl(206, 5%, 26%) !important;
+	--toolbarbutton-active-background: hsl(210, 4%, 31%) !important;
+}
