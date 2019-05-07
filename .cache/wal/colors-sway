@@ -1,0 +1,21 @@
+set $wallpaper /home/claudio/Immagini/wallpaper.png
+
+set $background #1f212a
+set $foreground #d1bdee
+
+set $color0 #1f212a
+set $color1 #4DE275
+set $color2 #626688
+set $color3 #A46DAF
+set $color4 #DB6EB0
+set $color5 #68A2B4
+set $color6 #7CCADD
+set $color7 #d1bdee
+set $color8 #9284a6
+set $color9 #4DE275
+set $color10 #626688
+set $color11 #A46DAF
+set $color12 #DB6EB0
+set $color13 #68A2B4
+set $color14 #7CCADD
+set $color15 #d1bdee

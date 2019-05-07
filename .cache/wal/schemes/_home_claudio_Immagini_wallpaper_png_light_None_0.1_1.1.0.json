@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/claudio/Immagini/wallpaper.png",
+    "alpha": "100",
+    "special": {
+        "background": "#ecf9fc",
+        "foreground": "#343746",
+        "cursor": "#343746"
+    },
+    "colors": {
+        "color0": "#ecf9fc",
+        "color1": "#8da192",
+        "color2": "#696b80",
+        "color3": "#958299",
+        "color4": "#ad9ba6",
+        "color5": "#829399",
+        "color6": "#a4b1b4",
+        "color7": "#343746",
+        "color8": "#4f848f",
+        "color9": "#8da192",
+        "color10": "#696b80",
+        "color11": "#958299",
+        "color12": "#ad9ba6",
+        "color13": "#829399",
+        "color14": "#a4b1b4",
+        "color15": "#343746"
+    }
+}
