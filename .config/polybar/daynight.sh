@@ -5,13 +5,11 @@
 switch_mode(){
 	case $status in
 	0)
-	wal -q -i "$(< ~/.cache/wal/wal)"
-	/bin/cp ~/.config/gtk-3.0/settingsNight.ini ~/.config/gtk-3.0/settings.ini
+	wal  --backend colorz --saturate 0.1 -q -i "$(< ~/.cache/wal/wal)"
 	~/.config/zathura/genzathurarc
 	;;
 	1)
-	wal -q -l -i "$(< ~/.cache/wal/wal)"
-	/bin/cp ~/.config/gtk-3.0/settingsDay.ini ~/.config/gtk-3.0/settings.ini
+	wal  --backend colorz --saturate 0.1 -q -l -i "$(< ~/.cache/wal/wal)"
         ~/.config/zathura/genzathurarc
 
 	;;
@@ -21,10 +19,10 @@ switch_mode(){
 print_mode(){
 	case $status in
 	0)
-	echo "Dark"
+	echo "    "
 	;;
 	1)
-	echo "Light"
+	echo "    "
 	;;
 	esac
 }

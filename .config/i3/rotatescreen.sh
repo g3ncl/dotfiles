@@ -34,4 +34,5 @@ then
 fi
 
 xinput set-prop "ATML1000:00 03EB:8A10" "Coordinate Transformation Matrix" $CTM
+xinput set-prop "Synaptics TM2714-001" "Coordinate Transformation Matrix" $CTM
 xrandr --output eDP-1 --rotate $xrandr_action

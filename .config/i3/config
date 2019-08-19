@@ -8,7 +8,8 @@
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference! 
-exec_always --no-startup-id compton --config ~/.config/compton/compton.conf  -b
+#exec_always --no-startup-id compton --config ~/.config/compton/compton.conf  -b
+#exec_always --no-startup-id dunst 
 exec --no-startup-id gebaard -b
 exec --no-startup-id wal -R
 exec --no-startup-id feh --bg-tile "$(< "${HOME}/.cache/wal/wal")"   
@@ -17,7 +18,7 @@ exec --no-startup-id xrdb -merge  ~/.Xresources
 exec_always --no-startup-id $HOME/.config/polybar/launchPolybar.sh
 
 
-font pango:Iosevka Term 12
+font pango:Iosevka Term 11
 
 
 
@@ -47,9 +48,9 @@ set $mod Mod4
 # from the generated scheme.
 # NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
 # it fails to get colors from Xresources for some reason.
-set_from_resource $fg i3wm.color7 #f0f0f0
-set_from_resource $bg i3wm.color2 #f0f0f0
-
+set_from_resource $fg i3wm.color7 #ffff00
+set_from_resource $bg i32m.color2 #ffff00
+#set_from_resource $bg #ffffff
 # class                 border  backgr. text indicator child_border
 client.focused          $bg     $bg     $fg  $bg       $bg
 client.focused_inactive $bg     $bg     $fg  $bg       $bg
@@ -60,7 +61,7 @@ client.placeholder      $bg     $bg     $fg  $bg       $bg
 client.background       $bg
 
 # PROTIP: You can also dynamically set dmenu's colors this way:
-bindsym $mod+d exec export GDK_SCALE=2 GDK_DPI_SCALE=0.5 && rofi -show run -display-run run -location 0 -font "Iosevka Term 27" -width 20 -lines 8 -bw 0 -i
+bindsym $mod+d exec export GDK_SCALE=2 GDK_DPI_SCALE=0.5 && rofi -show run -display-run run -location 0 -font "M+ 1m 27" -width 20 -lines 8 -bw 27 -i
 
 
 
@@ -110,8 +111,8 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f exec ~/.config/polybar/override.sh
-
+#bindsym $mod+f exec ~/.config/polybar/override.sh
+bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
@@ -171,7 +172,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -f 'pango: Iosevka Term 11' -m 'Do you really want to exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -202,9 +203,9 @@ new_window pixel 3
 
 bindsym $mod+r mode "resize"
 
-gaps inner 20
+gaps inner 7
 gaps outer 0
-
+gaps top 35 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -231,7 +232,5 @@ bindsym $mod+Control+Right exec ~/.config/i3/rotatescreen.sh right
 bindsym $mod+Control+Up exec ~/.config/i3/rotatescreen.sh normal
 bindsym $mod+Control+Down exec ~/.config/i3/rotatescreen.sh inverted
 #lockscreen
-bindsym $mod+l exec "sconsify -command pause && betterlockscreen -l dimblur"
-
-exec xautolock -time 15 "sconsify -command pause && betterlockscreen -l dimblur"
+bindsym $mod+l exec "betterlockscreen -l dimblur"
 
