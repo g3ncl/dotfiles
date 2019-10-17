@@ -1,7 +1,7 @@
 # dotfiles
 ## i3-gaps
 
-<img src="https://raw.githubusercontent.com/genox997/dotfiles/master/Screenshots/photo_2019-08-19_11-13-59.jpg" style="max-width:100%;">
+<img src="https://raw.githubusercontent.com/genox997/dotfiles/master/Screenshots/2019-10-17-132652_3200x1800_scrot.png" style="max-width:100%;">
 
 <ul>
 <li><strong>Font</strong>: M+ 1m </li>

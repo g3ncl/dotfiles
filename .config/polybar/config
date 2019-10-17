@@ -9,9 +9,9 @@
 
 [colors]
 i;background = ${xrdb:foreground}
-background = #c2c5c7
+background = #222222
 background-alt = ${xrdb:background}
-foreground = #ffffff
+foreground = #c2c2c2
 primary = #00000000
 ;foreground = ${xrdb:foreground}
 foreground-alt = ${xrdb:color6}
@@ -33,7 +33,7 @@ offset-x = 0%
 offset-y = 0.944%
 radius = 0
 fixed-center = true	
-dpi = -1
+dpi =192 
 locale= it_IT.UTF-8
 
 ;background =#dd03142C
@@ -62,7 +62,7 @@ font-2 = siji:size=10;1
 font-1 = "FontAwesome:size=11;5"
 font-0 = "M+ 1m:style=Medium:size=10;4"
 modules-right = cpu power   wlan   pulseaudio-tail  battery  powermenu
-modules-left = DND daynight date i3
+modules-left = DND  date i3
   
 
 tray-position = none 
@@ -111,6 +111,9 @@ format = <label-state> <label-mode>
 index-sort = false
 wrapping-scroll = false
 ws-icon-default = 
+fuzzy-match = true
+
+
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
@@ -119,7 +122,7 @@ label-mode-foreground = ${colors.background}
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused=%icon%
+label-focused=%icon% 
 label-focused-background = ${module/bspwm.label-focused-background}
 label-focused-underline = ${module/bspwm.label-focused-underline}
 label-focused-padding = ${module/bspwm.label-focused-padding}

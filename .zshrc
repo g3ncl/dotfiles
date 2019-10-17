@@ -97,5 +97,4 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 PATH=$PATH:/PATH:/snap/bin
-alias update='sudo apt update && sudo apt dist-upgrade'
 

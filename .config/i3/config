@@ -8,13 +8,11 @@
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference! 
-#exec_always --no-startup-id compton --config ~/.config/compton/compton.conf  -b
-#exec_always --no-startup-id dunst 
+exec_always --no-startup-id compton --config ~/.config/compton/compton.conf  -b
+exec_always --no-startup-id dunst 
 exec --no-startup-id gebaard -b
-exec --no-startup-id wal -R
-exec --no-startup-id feh --bg-tile "$(< "${HOME}/.cache/wal/wal")"   
-exec --no-startup-id xrdb -merge  ~/.Xresources
-#exec_always --no-startup-id $HOME/.config/conky/launch.sh
+exec --no-startup-id feh --bg-scale ${HOME}/Immagini/wallpaper73.png
+#exec --no-startup-id xrdb -merge  ~/.Xresources
 exec_always --no-startup-id $HOME/.config/polybar/launchPolybar.sh
 
 
@@ -48,9 +46,9 @@ set $mod Mod4
 # from the generated scheme.
 # NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
 # it fails to get colors from Xresources for some reason.
-set_from_resource $fg i3wm.color7 #ffff00
-set_from_resource $bg i32m.color2 #ffff00
-#set_from_resource $bg #ffffff
+set_from_resource $fg i3wm.color7 #222222
+set_from_resource $bg i32m.color2 #222222
+#set_from_resource $bg 
 # class                 border  backgr. text indicator child_border
 client.focused          $bg     $bg     $fg  $bg       $bg
 client.focused_inactive $bg     $bg     $fg  $bg       $bg
@@ -61,7 +59,7 @@ client.placeholder      $bg     $bg     $fg  $bg       $bg
 client.background       $bg
 
 # PROTIP: You can also dynamically set dmenu's colors this way:
-bindsym $mod+d exec export GDK_SCALE=2 GDK_DPI_SCALE=0.5 && rofi -show run -display-run run -location 0 -font "M+ 1m 27" -width 20 -lines 8 -bw 27 -i
+bindsym $mod+d exec export GDK_SCALE=2 GDK_DPI_SCALE=0.5 && rofi -show run -display-run run -location 0 -font "M+ 1m 27" -width 15 -lines 8 -bw 27 -i
 
 
 
@@ -199,14 +197,14 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-new_window pixel 3
+new_window pixel 0 
 
 bindsym $mod+r mode "resize"
 
-gaps inner 7
+gaps inner 14
 gaps outer 0
 gaps top 35 
-
+border_radius 15 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 
