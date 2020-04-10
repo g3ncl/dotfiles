@@ -8,7 +8,11 @@
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference! 
-exec_always --no-startup-id compton --config ~/.config/compton/compton.conf  -b
+#exec_always --no-startup-id picom --config ~/.config/picom/picom.conf  -b
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
+exec export GDK_SCALE="2"
+exec export GDK_DPI_SCALE="0.5"
+
 exec_always --no-startup-id dunst 
 exec --no-startup-id gebaard -b
 exec --no-startup-id feh --bg-scale ${HOME}/Immagini/wallpaper73.png
@@ -59,7 +63,7 @@ client.placeholder      $bg     $bg     $fg  $bg       $bg
 client.background       $bg
 
 # PROTIP: You can also dynamically set dmenu's colors this way:
-bindsym $mod+d exec export GDK_SCALE=2 GDK_DPI_SCALE=0.5 && rofi -show run -display-run run -location 0 -font "M+ 1m 27" -width 15 -lines 8 -bw 27 -i
+bindsym $mod+d exec export GDK_SCALE=2 GDK_DPI_SCALE=0.5 && rofi -show drun -display-run run -location 0 -font "M+ 1m 27" -width 15 -lines 8 -bw 27 -i
 
 
 
@@ -198,13 +202,13 @@ mode "resize" {
 }
 
 new_window pixel 0 
-
+new_float none
 bindsym $mod+r mode "resize"
 
 gaps inner 14
 gaps outer 0
 gaps top 35 
-border_radius 15 
+ 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 
@@ -220,10 +224,10 @@ bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
 
  
 # Multi-screen screenshots with scrot
-bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Immagini/Screenshots && mv $f ~/Immagini/Screenshots && xclip -selection clipboard -t image/png -i ~/Immagini/Screenshots/`ls -1 -t ~/Immagini/Screenshots | head -1`' # All screens
+bindsym --release Control+s exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Immagini/Screenshots && mv $f ~/Immagini/Screenshots && xclip -selection clipboard -t image/png -i ~/Immagini/Screenshots/`ls -1 -t ~/Immagini/Screenshots | head -1`' # All screens
 
 # area selection screenshots
-bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Immagini/Screenshots && mv $f ~/Immagini/Screenshots && xclip -selection clipboard -t image/png -i ~/Immagini/Screenshots/`ls -1 -t ~/Immagini/Screenshots | head -1`' # Area selection
+bindsym --release Control+a exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Immagini/Screenshots && mv $f ~/Immagini/Screenshots && xclip -selection clipboard -t image/png -i ~/Immagini/Screenshots/`ls -1 -t ~/Immagini/Screenshots | head -1`' # Area selection
 
 bindsym $mod+Control+Left exec ~/.config/i3/rotatescreen.sh left
 bindsym $mod+Control+Right exec ~/.config/i3/rotatescreen.sh right
